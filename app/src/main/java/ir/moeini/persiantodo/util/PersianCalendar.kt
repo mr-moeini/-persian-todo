@@ -1,6 +1,8 @@
 package ir.moeini.persiantodo.util
 
 import java.time.LocalDate
+import java.time.LocalDateTime
+import java.time.ZoneId
 
 /**
  * Converts between Gregorian (java.time.LocalDate) and the Jalali / Shamsi (Hijri Shamsi)
@@ -34,6 +36,13 @@ data class JalaliDate(val year: Int, val month: Int, val day: Int) : Comparable<
 
     companion object {
         fun today(): JalaliDate = PersianCalendarUtils.toJalali(LocalDate.now())
+
+        /** Epoch millis (device local time zone) for this Jalali date at the given hour/minute. */
+        fun epochMillisAt(date: JalaliDate, hour: Int, minute: Int): Long {
+            val g = PersianCalendarUtils.toGregorian(date)
+            val dt = LocalDateTime.of(g.year, g.monthValue, g.dayOfMonth, hour, minute)
+            return dt.atZone(ZoneId.systemDefault()).toInstant().toEpochMilli()
+        }
     }
 }
 

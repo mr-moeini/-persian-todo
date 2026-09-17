@@ -170,13 +170,17 @@ fun PersianTodoApp(viewModel: TaskViewModel) {
             existing = editingTask,
             lists = lists,
             onDismiss = { showAddSheet = false },
-            onSave = { titleText, note, listId, due ->
+            onSave = { titleText, note, listId, due, dueHour, dueMinute, alarmEnabled,
+                       smsEnabled, smsPhone, smsText, callEnabled, callPhone, callText ->
                 val existing = editingTask
                 if (existing == null) {
                     val isMyDay = currentDest == ScreenDest.MyDay
                     val isImportant = currentDest == ScreenDest.Important
                     viewModel.addTask(
                         title = titleText, note = note, listId = listId, due = due,
+                        dueHour = dueHour, dueMinute = dueMinute, alarmEnabled = alarmEnabled,
+                        smsEnabled = smsEnabled, smsPhoneNumber = smsPhone, smsText = smsText,
+                        callEnabled = callEnabled, callPhoneNumber = callPhone, callText = callText,
                         isMyDay = isMyDay, isImportant = isImportant
                     )
                 } else {
@@ -187,7 +191,16 @@ fun PersianTodoApp(viewModel: TaskViewModel) {
                             listId = listId,
                             dueJalaliYear = due?.year,
                             dueJalaliMonth = due?.month,
-                            dueJalaliDay = due?.day
+                            dueJalaliDay = due?.day,
+                            dueHour = dueHour,
+                            dueMinute = dueMinute,
+                            alarmEnabled = alarmEnabled,
+                            smsEnabled = smsEnabled,
+                            smsPhoneNumber = smsPhone,
+                            smsText = smsText,
+                            callEnabled = callEnabled,
+                            callPhoneNumber = callPhone,
+                            callText = callText
                         )
                     )
                 }

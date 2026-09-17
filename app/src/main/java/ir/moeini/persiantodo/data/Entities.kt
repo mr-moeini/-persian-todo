@@ -30,8 +30,18 @@ data class Task(
     val dueJalaliYear: Int? = null,
     val dueJalaliMonth: Int? = null,
     val dueJalaliDay: Int? = null,
+    val dueHour: Int? = null,
+    val dueMinute: Int? = null,
+    val alarmEnabled: Boolean = false,
+    val smsEnabled: Boolean = false,
+    val smsPhoneNumber: String? = null,
+    val smsText: String? = null,
+    val callEnabled: Boolean = false,
+    val callPhoneNumber: String? = null,
+    val callText: String? = null,
     val createdAtEpochDay: Long = 0,
     val repeatRule: String? = null // null = no repeat; e.g. "DAILY", "WEEKLY", "MONTHLY"
 ) {
     val hasDueDate: Boolean get() = dueJalaliYear != null && dueJalaliMonth != null && dueJalaliDay != null
+    val hasDueTime: Boolean get() = dueHour != null && dueMinute != null
 }
