@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">یادکار</string>
+
+    <!-- Smart lists -->
+    <string name="list_my_day">روز من</string>
+    <string name="list_important">مهم</string>
+    <string name="list_planned">برنامه‌ریزی‌شده</string>
+    <string name="list_tasks">وظایف</string>
+    <string name="list_completed">انجام‌شده</string>
+
+    <!-- Task item -->
+    <string name="add_task_hint">افزودن یک وظیفه</string>
+    <string name="due_date">تاریخ سررسید</string>
+    <string name="no_due_date">بدون تاریخ</string>
+    <string name="note">یادداشت</string>
+    <string name="repeat">تکرار</string>
+    <string name="mark_important">علامت‌گذاری به‌عنوان مهم</string>
+    <string name="delete">حذف</string>
+    <string name="save">ذخیره</string>
+    <string name="cancel">انصراف</string>
+    <string name="new_list">فهرست جدید</string>
+    <string name="list_name_hint">نام فهرست</string>
+
+    <!-- Calendar -->
+    <string name="today">امروز</string>
+    <string name="tomorrow">فردا</string>
+    <string name="next_week">هفتهٔ آینده</string>
+    <string name="pick_date">انتخاب تاریخ</string>
+
+    <!-- Empty states -->
+    <string name="empty_list">کاری برای نمایش نیست</string>
+</resources>

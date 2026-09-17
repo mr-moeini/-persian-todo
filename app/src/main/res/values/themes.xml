@@ -1,0 +1,3 @@
+<resources>
+    <style name="Theme.PersianTodo" parent="android:Theme.Material.Light.NoActionBar" />
+</resources>
